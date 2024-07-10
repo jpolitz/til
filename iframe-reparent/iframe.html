@@ -1,0 +1,25 @@
+<!doctype HTML>
+<html>
+    <body>
+        <p>This is the iframe</p>
+        <div id="log">
+
+        </div>
+    </body>
+    <script>
+
+    </script>
+    <script>
+let count = 1;
+window.onload = function() {
+    const elt = document.createElement("p");
+    elt.innerText = `Reloaded at ${Date.now()}`
+    document.getElementById("log").appendChild(elt);
+}
+document.addEventListener( "DOMContentLoaded", function() {
+    const elt = document.createElement("p");
+    elt.innerText = `onreadystatechange at ${Date.now()}`
+    document.getElementById("log").appendChild(elt);
+});
+    </script>
+</html>

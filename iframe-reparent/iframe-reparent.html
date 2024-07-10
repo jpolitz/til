@@ -1,0 +1,26 @@
+<!doctype HTML>
+
+<html>
+<body>
+    <button onclick="clickButton()" ="move-it">Move it!</button>
+    <div id="starts-here" style="border: 1px solid black; width: 30em; height: 30em">
+        This is where the iframe starts
+        <iframe id="the-frame" src="https://code.pyret.org/editor"></iframe>
+    </div>
+    <div id="moves-here" style="border: 1px solid blue; width: 30em; height: 30em">
+        This is where it moves to
+
+    </div>
+</body>
+<script>
+    function clickButton() {
+        const frame = document.getElementById("the-frame");
+        const parent = frame.parentNode;
+        const starts = document.getElementById("starts-here");
+        const moves = document.getElementById("moves-here");
+        if(parent === starts) { moves.appendChild(frame); }
+        else { starts.appendChild(frame); }
+        
+    }
+</script>
+</html>
